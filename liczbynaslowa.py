@@ -68,7 +68,6 @@ def ZamienNaSlowaRzedy(liczba):
 
         rzad+=1
         liczba = int(liczba / 1000)
-        print(lista)
 
     return lista
 
