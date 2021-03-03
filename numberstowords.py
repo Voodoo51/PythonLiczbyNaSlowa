@@ -65,25 +65,25 @@ def ConvertNumbersToWordsScales(number):
 
 
 def ConvertNumbersToWords(number):
-    lista = []
+    list = []
     unit = number % 10
     ten = number % 100
     hundreds = int((number % 1000) / 100)
 
 
     if (ten > 9 and ten < 20):
-        lista.insert(0, units[ten])
+        list.insert(0, units[ten])
 
     else:
-        lista.insert(0, "-" + units[unit])
-        lista.insert(0, tens[int(ten / 10)])
-    lista.insert(0, units[hundreds])
+        list.insert(0, "-" + units[unit])
+        list.insert(0, tens[int(ten / 10)])
+    list.insert(0, units[hundreds])
     if(units[hundreds] != ''):
-        lista.insert(1,"hundred ")
+        list.insert(1,"hundred ")
 
     number = int(number / 1000)
     listWithScales = ConvertNumbersToWordsScales(number)
-    listWithScales.extend(lista)
+    listWithScales.extend(list)
 
     result = ""
     for word in listWithScales:
